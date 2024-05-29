@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bene - Links</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            background-color: rgba(22, 27, 33, 1);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+        }
+        h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo" onclick="homeAction()">Bene</div>
+            <nav>
+                <button class="nav-button about-me-button" onclick="aboutMeAction()">Links</button>
+                <button class="nav-button projects-button" onclick="projectsAction()">Projects</button>
+                <button class="login-button" onclick="loginAction()"><span>Login</span></button>
+                <a href="https://github.com/nxBene" class="github-logo" target="_blank">
+                    <img src="/github-mark-white.png" alt="GitHub Logo">
+                </a>
+            </nav>
+        </div>
+
+        <script>
+            function homeAction() {
+                window.location.href = '/';
+            }
+
+            function aboutMeAction() {
+                window.location.href = '/links/';
+            }
+    
+            function projectsAction() {
+                window.location.href = '/projects/';
+            }
+    
+            function loginAction() {
+                window.location.href = '/login/';
+            }
+        </script>
+    </header>
+
+    <div class="header">Links</div>
+    <h1>Website not finished.</h1>
+    <h1>Check out my Github for updates.</h1>
+</body>
+</html>

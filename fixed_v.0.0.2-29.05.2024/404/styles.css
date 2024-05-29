@@ -1,0 +1,32 @@
+.banner {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.8); /* Hellrot mit leichter Transparenz */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 9999;
+}
+
+.banner-text {
+    margin: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 0;
+    }
+}
