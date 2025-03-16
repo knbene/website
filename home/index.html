@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nxBene - Maintenance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
+
+        body {
+            color: white;
+            margin-left: 15px;
+            margin-right: 15px;
+            background-color: #0F0F1E;
+            font-family: 'Inter';
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <h1><br></h1>
+
+   
+
+
+
+    <div class="centered">
+
+        <div class="brand">
+            <div class="name">Bene</div>
+            <div class="subtitle">Full Stack Developer</div>
+        </div>
+
+        <div class="socials">
+         <a target="_blank" href="https://github.com/nxBene" class="Github">Github</a>
+         <a target="_blank" href="https://instagram.com/nxBene" class="Insta">Instagram</a>
+         <a target="_blank" href="mailto:contact.nxBene@icloud.com" class="mail">Mail</a>
+        </div>
+
+       </div>
+
+ <footer>
+        <div class="footer-links">
+            <span onclick="window.location.href=''">Links</span>
+            <span onclick="window.location.href=''">Projects</span>
+            <span onclick="window.location.href='../Impressum'">Impressum</span>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright Benedikt Knöpfle 2024</p>
+            <span>All rights reserved</span>
+        </div>
+    <style>
+footer {
+            background-color: #0F0F1E;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-links span {
+            margin: 0 15px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .footer-links span:hover {
+            color: #c4c4c4;
+        }
+
+        .copyright {
+            font-size: 14px;
+            cursor: default;
+        }
+    </style>
+    <script>
+        fetch('/header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+        alert('fetch was not successful');
+        location.reload();
+        console.error('Es gab ein Problem mit dem Fetch-Vorgang:', error);
+    });
+    </script>
+</footer>
+
+
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap');
+   
+    * {
+     font-family: Raleway, 'sans-serif';
+    }
+   
+    :root {
+     font-family: Raleway, 'sans-serif';
+    }
+   
+    body {
+     width: 100%;
+    }
+   
+    div.centered {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     row-gap: 20px;
+     position: absolute;
+     top: 20%;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 100%;
+    }
+   
+    div.brand {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     row-gap: 10px;
+    }
+   
+    div.name {
+     font-size: 7em;
+     font-weight: bold;
+    }
+   
+    div.subtitle {
+     font-size: 2em;
+     opacity: 70%;
+     letter-spacing: .1em;
+     text-align: center;
+    }
+   
+    div.projects {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     row-gap: 5px;
+     background: rgba(0, 0, 0, 0.07);
+     border-radius: 5px;
+     padding: 10px;
+     font-size: 1.2em;
+     text-align: center;
+     width: 80%;
+     max-width: 500px;
+    }
+   
+    div.projects div.title {
+     font-weight: bold;
+     font-size: 1.1em;
+    }
+   
+    div.socials {
+     display: flex;
+     column-gap: 20px;
+    }
+   
+    div.socials a {
+     position: relative;
+    }
+   
+    div.socials a:hover::before {
+     color: #fff;
+     background: #000;
+     content: attr(tooltip);
+     position: absolute;
+     top: 40px;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 100;
+     animation: fadeIn .5s ease;
+     padding: 5px;
+     border-radius: 5px;
+    }
+   
+    div.socials img {
+     width: 35px;
+     height: 35px;
+    }
+   
+    div.socials img.mail {
+     border-radius: 10px;
+    }
+   
+    div.check-out {
+     margin-top: 10px;
+     font-weight: bold;
+    }
+   
+    div.check-out a {
+     color: #0059ff;
+    }
+   
+    div.links a {
+     color: rgba(0, 0, 0, .7);
+     text-decoration: none;
+    }
+    div.links a:hover {
+     text-decoration: underline;
+     color: rgba(0, 0, 0, .8);
+    }
+   
+    @keyframes fadeIn {
+     0% {
+      opacity: 0%;
+      transform: translateX(-50%) translateY(5px);
+     }
+     100% {
+      opacity: 100%;
+     }
+    }
+   </style>
+
+
+
+</body>
+</html>
