@@ -14,58 +14,24 @@
             background-color: #0F0F1E;
             font-family: 'Inter';
             font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
         }
 
         .Email {
             cursor: pointer;
-     }
+        }
 
-     #wide {
-        margin-right: 15px;
-     }
-    </style>
-</head>
-<body>
-    <div id="header-placeholder"></div>
-    <h1><br></h1>
-    <h1>Impressum</h1>
-    <h2>Angaben gemäß § 5 TMG:</h2>
-    <div class="Adresse">
-        <p>Benedikt Knöpfle<br>
-            Rackertshofener Str. 35<br>
-            85139 Wettstetten</p>
-    </div>
-    <h3>Kontakt:</h3>
-    <div class="Text">
-        <p>E-Mail: <span class="Email" onclick="window.location.href='mailto:contact.nxBene@icloud.com'">contact.nxBene@icloud.com</span>
-        </p>
-    </div>
-    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
-    </h3>
-    <div class="Adresse">
-        <p>Benedikt Knöpfle<br>
-            Rackertshofener Str. 35<br>
-            85139 Wettstetten</p>
-    </div>
-    <h3>Haftungsausschluss (Disclaimer)</h3>
-    <div class="Text" id="wide">
-        <p>Haftung für Inhalte:<br>Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt möglich, zu dem ich von einer konkreten Rechtsverletzung Kenntnis erlange. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.</p>
-        <p>Urheberrecht:<br>Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.</p>
-    </div>
-    <footer>
-        <div class="footer-links">
-            <span onclick="window.location.href=''">Links</span>
-            <span onclick="window.location.href=''">Projects</span>
-            <span onclick="window.location.href='../Impressum'">Impressum</span>
-        </div>
-        <div class="copyright">
-            <p>&copy; Copyright Benedikt Knöpfle 2024</p>
-            <span>All rights reserved</span>
-        </div>
-    </footer>
-<style>
+        #wide {
+            margin-right: 15px;
+        }
 
-footer {
+        footer {
             background-color: #0F0F1E;
             color: #FFFFFF;
             text-align: center;
@@ -91,28 +57,68 @@ footer {
             font-size: 14px;
             cursor: default;
         }
-</style>
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <h1><br></h1>
+    <div class="content">
+        <h1>Impressum</h1>
+        <h2>Angaben gemäß § 5 TMG:</h2>
+        <div class="Adresse">
+            <p>Benedikt Knöpfle<br>
+                Rackertshofener Str. 35<br>
+                85139 Wettstetten</p>
+        </div>
+        <h3>Kontakt:</h3>
+        <div class="Text">
+            <p>E-Mail: <span class="Email" onclick="window.location.href='mailto:contact.nxBene@icloud.com'">contact.nxBene@icloud.com</span>
+            </p>
+        </div>
+        <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h3>
+        <div class="Adresse">
+            <p>Benedikt Knöpfle<br>
+                Rackertshofener Str. 35<br>
+                85139 Wettstetten</p>
+        </div>
+        <h3>Haftungsausschluss (Disclaimer)</h3>
+        <div class="Text" id="wide">
+            <p>Haftung für Inhalte:<br>Als Diensteanbieter bin ich gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt möglich, zu dem ich von einer konkreten Rechtsverletzung Kenntnis erlange. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werde ich diese Inhalte umgehend entfernen.</p>
+            <p>Urheberrecht:<br>Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitte ich um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.</p>
+        </div>
+    </div>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <span onclick="window.location.href='../links'">Links</span>
+            <span onclick="window.location.href='../projects'">Projects</span>
+            <span onclick="window.location.href='../Impressum'">Impressum</span>
+        </div>
+        <div class="copyright">
+            <p>&copy; Copyright Benedikt Knöpfle 2024</p>
+            <p>Source Code available on Github</p>
+            <span>All rights reserved</span>
+        </div>
+    </footer>
+    <!-- Footer -->
 
-
-    
     <script>
         fetch('/header.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-        return response.text();
-    })
-    .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-    })
-    .catch(error => {
-        alert('fetch was not successful');
-        location.reload();
-        console.error('Es gab ein Problem mit dem Fetch-Vorgang:', error);
-    });
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            alert('fetch was not successful');
+            location.reload();
+            console.error('Es gab ein Problem mit dem Fetch-Vorgang:', error);
+        });
     </script>
-
 </body>
 </html>

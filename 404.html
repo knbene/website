@@ -1,46 +1,74 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    html {
-      color: #b6b6b6;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
+    @import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
 
     body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
+      color: white;
+      margin: 0;
       background-color: #0F0F1E;
+      font-family: 'Inter';
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     h1 {
       color: #ffffff;
       font-size: 2em;
       font-weight: 400;
+      margin-top: 20px;
     }
 
     p {
-      margin: 0 auto;
+      margin: 10px auto;
       width: 280px;
     }
 
-    @media only screen and (max-width: 280px) {
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-right: 10%;
+      margin-left: 10%;
+    }
 
-      body,
+    footer {
+      background-color: #0F0F1E;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+    }
+
+    .footer-links {
+      margin-bottom: 10px;
+    }
+
+    .footer-links span {
+      margin: 0 15px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .footer-links span:hover {
+      color: #c4c4c4;
+    }
+
+    .copyright {
+      font-size: 14px;
+      cursor: default;
+    }
+
+    @media only screen and (max-width: 280px) {
       p {
         width: 95%;
       }
@@ -49,15 +77,54 @@
         font-size: 1.5em;
         margin: 0 0 0.3em;
       }
-
     }
   </style>
 </head>
-
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
-</body>
+  <div id="header-placeholder"></div>
+  <h1><br></h1>
 
+  <div class="content">
+    <div class="beta">
+      <h1>Page Not Found</h1>
+      <p>Sorry, but the page you were trying to view does not exist.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <span onclick="window.location.href='./links'">Links</span>
+      <span onclick="window.location.href='./projects'">Projects</span>
+      <span onclick="window.location.href='./Impressum'">Impressum</span>
+    </div>
+    <div class="copyright">
+      <p>&copy; Copyright Benedikt Knöpfle 2024</p>
+      <p>Source Code available on Github</p>
+      <span>All rights reserved</span>
+    </div>
+  </footer>
+  <!-- Footer -->
+
+  <script>
+    // Fetch header 
+    fetch('/header.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP-Fehler! Status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        if (!data.trim()) {
+          throw new Error('Header-Datei ist leer.');
+        }
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Fehler beim Laden des Headers:', error);
+        document.getElementById('header-placeholder').innerHTML = '<p style="color: red;">Header konnte nicht geladen werden.</p>';
+      });
+  </script>
+</body>
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
