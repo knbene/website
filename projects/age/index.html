@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live-Altersberechnung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+        .age-wrapper, .countdown-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .age-container, .countdown-container {
+            display: flex;
+            align-items: baseline;
+            font-size: 64px;
+            font-weight: bold;
+            position: relative;
+        }
+        .age-label, .countdown-label {
+            color: gray;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: absolute;
+            top: -20px;
+            left: 0;
+        }
+        .age-int, .countdown-int {
+            font-size: 80px;
+        }
+        .age-decimal, .countdown-decimal {
+            font-size: 32px;
+            color: gray;
+        }
+        
+        .countdown-wrapper {
+            text-align: center;
+        }
+        .countdown-text {
+            font-size: 20px;
+            color: black;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="age-wrapper">
+        <div class="age-container">
+            <span class="age-label">AGE</span>
+            <span class="age-int" id="age-int"></span>
+            <span class="age-decimal" id="age-decimal"></span>
+        </div>
+    </div>
+
+    <div class="countdown-wrapper">
+        <div class="countdown-container">
+            <span class="countdown-label">DAYS UNTIL NEXT BIRTHDAY</span>
+            <span class="countdown-int" id="countdown-int"></span>
+            <span class="countdown-decimal" id="countdown-decimal"></span>
+        </div>
+    </div>
+
+<script>
+    function updateAgeAndCountdown(birthDate) {
+        const now = new Date();
+        
+        // Altersberechnung
+        const ageInMilliseconds = now - birthDate;
+        const ageInSeconds = ageInMilliseconds / 1000;
+        const ageInYears = ageInSeconds / (60 * 60 * 24 * 365.2425); // Berücksichtigung von Schaltjahren
+        const ageString = ageInYears.toFixed(8); // 8 Nachkommastellen
+        const [intPart, decimalPart] = ageString.split(".");
+
+        document.getElementById("age-int").textContent = intPart;
+        document.getElementById("age-decimal").textContent = "." + decimalPart;
+
+        // Countdown bis zum nächsten Geburtstag
+        const currentYear = now.getUTCFullYear();
+        let nextBirthday = new Date(Date.UTC(currentYear, birthDate.getUTCMonth(), birthDate.getUTCDate(), birthDate.getUTCHours(), birthDate.getUTCMinutes(), birthDate.getUTCSeconds()));
+
+        if (now >= nextBirthday) {
+            // Falls der Geburtstag dieses Jahr schon vorbei ist, nächstes Jahr nehmen
+            nextBirthday = new Date(Date.UTC(currentYear + 1, birthDate.getUTCMonth(), birthDate.getUTCDate(), birthDate.getUTCHours(), birthDate.getUTCMinutes(), birthDate.getUTCSeconds()));
+        }
+
+        const timeUntilBirthday = nextBirthday - now;
+        const daysUntilBirthday = timeUntilBirthday / (1000 * 60 * 60 * 24); // Tage mit Nachkommastellen berechnen
+        const daysString = daysUntilBirthday.toFixed(8); // 8 Nachkommastellen
+        const [countdownInt, countdownDecimal] = daysString.split(".");
+
+        document.getElementById("countdown-int").textContent = countdownInt;
+        document.getElementById("countdown-decimal").textContent = "." + countdownDecimal;
+    }
+
+    function askForBirthDate() {
+        const birthDateString = prompt("Bitte geben Sie Ihr Geburtsdatum ein (YYYY-MM-DD):");
+        if (birthDateString) {
+            const birthDate = new Date(birthDateString);
+            if (!isNaN(birthDate)) {
+                setInterval(() => updateAgeAndCountdown(birthDate), 10); // Aktualisierung alle 10ms
+                updateAgeAndCountdown(birthDate); // Erste Berechnung sofort
+            } else {
+                alert("Ungültiges Datum. Bitte versuchen Sie es erneut.");
+                askForBirthDate();
+            }
+        } else {
+            alert("Geburtsdatum ist erforderlich.");
+            askForBirthDate();
+        }
+    }
+
+    askForBirthDate();
+</script>
+
+</body>
+</html>

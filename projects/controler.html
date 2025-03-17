@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controler</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #0F0F1E;
+            color: white;
+        }
+        .container {
+            text-align: center;
+        }
+        .checkbox {
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #1E90FF;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Disclaimer</h2>
+        <p>This is a demo website. None of the content is real.<br>Placed orders or reviews are not saved.</p>
+        <div class="checkbox">
+            <input type="checkbox" id="agree" onclick="toggleButton()">
+            <label for="agree">I understand and want to continue</label>
+        </div>
+        <button id="continueButton" class="button" disabled onclick="continueAction()">Continue</button>
+    </div>
+
+    <script>
+        function toggleButton() {
+            const checkbox = document.getElementById('agree');
+            const button = document.getElementById('continueButton');
+            button.disabled = !checkbox.checked;
+        }
+
+        function continueAction() {
+            window.opener.location.href = './TrP/info.txt';
+            window.close();
+        }
+    </script>
+</body>
+</html>

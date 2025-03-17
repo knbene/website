@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nxBene - Maintenance</title>
+    <title>nxBene - Projects</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
 
@@ -27,7 +27,33 @@
             text-align: center;
             margin-right: 10%;
             margin-left: 10%;
-    }
+        }
+
+        .TrP {
+            margin-bottom: 20px;
+        }
+
+        .Demo {
+            padding: 10px 20px;
+            background-color: #1E90FF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .Demo:hover {
+            background-color: #1C86EE;
+            transform: translateY(-2px);
+        }
+
+        .Demo:active {
+            background-color: #1A7CCC;
+            transform: translateY(0);
+        }
 
         footer {
             background-color: #0F0F1E;
@@ -62,10 +88,19 @@
     <h1><br></h1>
 
     <div class="content">
-        <div class="beta">
-            <h2>Website Maintenance</h2>
-            <p>Sorry, this website is currently under maintenance. Please come back later.</p>
+
+        <div class="TrP">
+            <h2>Transit Point</h2>
+            <p>With this service you can receive packages without the sender knowing your address</p>
+            <button class="Demo" onclick="PR1TransitPoint()">View Demo</button>
         </div>
+
+        <div class="TrP">
+            <h2>Age</h2>
+            <p>See your exact Age</p>
+            <button class="Demo" onclick="window.location.href='age'">View Demo</button>
+        </div>
+
     </div>
 
     <!-- Footer -->
@@ -102,10 +137,11 @@
                 console.error('Fehler beim Laden des Headers:', error);
                 document.getElementById('header-placeholder').innerHTML = '<p style="color: red;">Header konnte nicht geladen werden.</p>';
             });
-    </script>
 
-    <script>
-        //  window.location.href = "/Impressum";
+        function PR1TransitPoint() {
+            const popup = window.open('/projects/controler.html', 'popup', 'width=600,height=400');
+            popup.focus();
+        }
     </script>
 </body>
 </html>
