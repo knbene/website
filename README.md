@@ -7,7 +7,7 @@
 
 There are multiple subdomains for the website
 
-[knbene.de](https://knbene.de), [rd.knbene.de](https://rd.knbene.de), [beta.nxBene.de](https://beta.knbene.de), [nxBene.de](https://nxBene.de)
+[knbene.de](https://knbene.de), [rd.knbene.de](https://rd.knbene.de), [beta.knbene.de](https://beta.knbene.de), [nxBene.de](https://nxBene.de)
 
 Project Domains
 
