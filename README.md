@@ -7,4 +7,8 @@
 
 There are multiple subdomains for the website
 
-[nxBene.de](https://nxBene.de), [dev.nxBene.de](https://dev.nxBene.de), [com.nxBene.de](https://com.nxbene.de), [www.nxBene.de](https://www.nxBene.de), [go.nxBene.de](https://go.nxBene.de)
+[knbene.de](https://knbene.de), [rd.knbene.de](https://rd.knbene.de), [beta.nxBene.de](https://beta.knbene.de), [nxBene.de](https://nxBene.de)
+
+Project Domains
+
+[AK25.knbene.de](https://AK25.knbene.de)
